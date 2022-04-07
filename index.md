@@ -25,3 +25,8 @@
 print `hello Github`
 print `see u next lab :)`
 ```
+
+---
+
+## Lab report
+[Lab Report 1](lab-report-1-week-2.html)
