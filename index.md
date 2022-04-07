@@ -1,5 +1,5 @@
 # Lab 2 Report
-*Apr. 7th, Thursday, Sunny*
+*Apr. 7th, Thursday, 晴*
 ## Good morning! 
 > And and in case I don't see ya, good afternoon, good evening, and good night! 
 
