@@ -47,7 +47,19 @@ Here is the [resulting commit](https://github.com/murph77/markdown-parser/blob/m
 
 ## Copy whole directories with `scp -r`
 
+To copy the whole current directory to the remote server, we can use the command `scp -r . ieng6:directoryname` as shown below: 
 
+![image](Pictures/3.1.png)
 
+To compile and run the tests on the remote server, we can login using `ssh ieng6` first, change to the `markdown-parser directory`, then use the command `javac -cp .:lib/junit-4.13.2.jar:lib/hamcrest-core-1.3.jar MarkdownParseTest.java` and `java -cp .:lib/junit-4.13.2.jar:lib/hamcrest-core-1.3.jar org.junit.runner.JUnitCore MarkdownParseTest` to compile and run the file: 
 
+![image](Pictures/3.2.png)
+
+To make the process easier, we also can combine all of the command into one line:
+`scp -r *.java *.md lib/ ieng6:markdown-parser; ssh ieng6 "cd markdown-parser/; /software/CSE/oracle-java-17/jdk-17.0.1/bin/javac -cp .:lib/junit-4.13.2.jar:lib/hamcrest-core-1.3.jar MarkdownParseTest.java; /software/CSE/oracle-java-17/jdk-17.0.1/bin/java -cp .:lib/junit-4.13.2.jar:lib/hamcrest-core-1.3.jar org.junit.runner.JUnitCore MarkdownParseTest"`
+
+![image](Pictures/3.3.png)
+
+***
+### End of Lab Report 3.
 
