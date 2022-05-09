@@ -29,7 +29,7 @@ Follow the instruction [here](https://docs.github.com/en/authentication/connecti
 
 ![image](Pictures/2.3.png) 
 
-In addition, we also need to add our keys to the ssh-agent: 
+In addition, we also need to add our keys to the ssh-agent (ignore the markerdown-parser directory): 
 ![image](Pictures/2.4.png) 
 ![image](Pictures/2.8.png) 
 
@@ -42,6 +42,11 @@ Then, we can commit and push the change using the command `git add .`, `git comm
 ![image](Pictures/2.7.png)
 
 Here is the [resulting commit](https://github.com/murph77/markdown-parser/blob/main/MarkdownParse.java) .
+
+***
+
+## Copy whole directories with `scp -r`
+
 
 
 
