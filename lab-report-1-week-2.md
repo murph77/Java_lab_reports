@@ -1,1 +1,0 @@
-![Image](lab2-ss.png)
