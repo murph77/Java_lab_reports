@@ -12,6 +12,7 @@ Then, we can get rid of the long username and just login with the command `ieng6
 We can also use `scp` to copy a file to our ieng6 account without typing the whole username: 
 
 ![image](Pictures/1.3.png) 
+![image](Pictures/1.4.png) 
 
 ***
 
