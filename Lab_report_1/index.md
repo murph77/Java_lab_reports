@@ -4,7 +4,7 @@ This is a tutorial about how to set your computer up for remote access to the CS
 
 ### **Step 1: Installing VScode**
 Go to the Visual Studio Code website https://code.visualstudio.com/ and download the Visual Studio Code application. After installing and openning the VScode, you should see a window like this: 
-![image](ss1.png)
+![image](Pictures/ss1.png)
 
 ***
 
@@ -20,7 +20,7 @@ We will need to connect our local machine to a remote computer over the internet
 - The system might ask `Are you sure you want to continue connecting` if you are connecting to a new server for the first time, enter `yes`. Then type in your password when prompted (sometimes you need to enter more than 3 times to pass through). 
 
 - The whole process should be something look like this: 
-![image](ss2.png) 
+![image](Pictures/ss2.png) 
 
 Now your local machine becomes a *client* that are connected to a *server* computer in the CSE basement! 
 
@@ -33,15 +33,15 @@ You can try to run some commands such as `cd`, `ls`, `pwd`, `mkdir`, and `cp` on
 
 - For example, running the command `ls` will list all files (not including the hidden files) that are in the current directory: 
 
-    ![image](ss9.png)
+    ![image](Pictures/ss9.png)
 
 - Running the command `ls -lat` on the remote server will allow you to see the list of all files including the hidden files in the directory sorted by date: 
 
-    ![image](ss3.png) 
+    ![image](Pictures/ss3.png) 
 
 - Running the command `pwd` will print the path of your current working directory: 
 
-    ![image](ss10.png)
+    ![image](Pictures/ss10.png)
 
 *** 
 
@@ -50,7 +50,7 @@ You can also copy files from your local computer to the remote server computer b
 
 For example, to copy a local file `WhereAmI.java` to the server, run the command `scp WhereAmI.java cs15lsp22zz@ieng6.ucsd.edu:~/` (change to your own account) on your local computer, and enter your password when prompted. Then, log in to ieng6 again and use the command `ls`, you'll see the new file is moved to the remote sever! The whole process should look like this: 
 
-![image](ss4.png)
+![image](Pictures/ss4.png)
 
 *** 
 
@@ -64,15 +64,15 @@ To avoid typing password repetiively, we can create a ssh key.
 - Then both a public key (in `id_rsa.pub`) and a private key (in `id_rsa`) will be created and you will see a random image for your key
 - The whole process should look like this: 
 
-    ![image](ss5.png)
+    ![image](Pictures/ss5.png)
 
 - Then we need to copy the *public key* to the `.ssh` directory. On your local computer, type `scp /Users/<user-name>/.ssh/id_rsa.pub cs15lsp22zz@ieng6.ucsd.edu:~/.ssh/authorized_keys` (change to your username and account). The process looks like this: 
 
-    ![image](ss6.png)
+    ![image](Pictures/ss6.png)
 
 - After that, you should be able to login to the remote server and do work without entering the password: 
  
-    ![image](ss7.png)
+    ![image](Pictures/ss7.png)
 
 *** 
 
@@ -87,7 +87,7 @@ We can also make local edit on a file on the remote server.
 
 - For example, I added a line "Hello" to my WhereAmI.java file locally and run it remotely, the whole process looks like this: 
 
-    ![image](ss11.png)
+    ![image](Pictures/ss11.png)
 
 *** 
 
