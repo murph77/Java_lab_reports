@@ -7,7 +7,8 @@
 
 
 ## - Snippet 1
-### Expected outputs are three links: `'google.com`,`google.com`,`ucsd.edu` 
+### Expected outputs are three links:
+`'google.com`,`google.com`,`ucsd.edu` 
 
 ![image](Pictures/1.png)
 
@@ -33,7 +34,8 @@ Since the \`\` symbol has a higher priority to be parsed, any `[` `]` `(` `)` wi
 
 ## - Snippet 2
 
-### Expected outputs are three links: `a.com`,`a.com(())`,`example.com`
+### Expected outputs are three links: 
+`a.com`,`a.com(())`,`example.com`
 
 ![image](Pictures/2.png)
 
@@ -59,7 +61,8 @@ For the second line, we can add a function that counts the `(` and `)`, count +1
 
 ## - Snippet 3
 
-### Expected outputs is the link: `https://sites.google.com/eng.ucsd.edu/cse-15l-spring-2022/schedule`
+### Expected outputs is the link: 
+`https://sites.google.com/eng.ucsd.edu/cse-15l-spring-2022/schedule`
 
 ![image](Pictures/3.png)
 
