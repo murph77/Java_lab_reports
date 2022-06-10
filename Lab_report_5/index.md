@@ -1,87 +1,45 @@
-# Lab Report 4 -- More MarkdownParse Tests
+# Lab Report 5 -- Use Vim to compare files
 
-## - Links
-[markdown-parse](https://github.com/murph77/markdown-parse-lab-report-4/tree/main/markdown-parse-new)
+## - Find the output difference 
+To find the tests with different results, I first use `bash script.sh > results.txt` to make the test output in both my markdown-parse and the given markdown-parse a txt file, and then used the command `vimdiff markdown-parser-group/results.txt markdown-parser/results.txt` to compare the results. 
 
-[markdown-parse-reviewed](https://github.com/murph77/markdown-parse-lab-report-4/tree/main/markdown-parser-reviewed)
+## - Test 1
+The first different result I found is [test201](https://github.com/nidhidhamnani/markdown-parser/blob/main/test-files/201.md?plain=1).
 
-
-## - Snippet 1
-### Expected outputs are three links:
-`'google.com`,`google.com`,`ucsd.edu` 
+The comparison of the output of our implementation (left) and given implemention (right) is as below: 
 
 ![image](Pictures/1.png)
 
-### Test
-(typo: the second expected outcome is google.com instead of google.come, but doesn't make any difference to the failing result here)
-
-![image](Pictures/4.png)
-
-### Test output of my implementation
-The test failed as shown:
-
-![image](Pictures/7.png)
-
-### Test output of reviewed implementation
-The test failed as shown: 
-
-![image](Pictures/10.png)
-
-### Change can be made
-Since the \`\` symbol has a higher priority to be parsed, any `[` `]` `(` `)` within \`\` will not run as expected. We can first check if there still exists a pair of `[]` after we removed the content inside \`\`, if so we can print out the content within `()`, else we skip that line. 
-
-
-
-## - Snippet 2
-
-### Expected outputs are three links: 
-`a.com`,`a.com(())`,`example.com`
+According to CommonMark, the correct out put should be `[]` because there is no link in it: 
 
 ![image](Pictures/2.png)
 
-### Test
-(typo: the second expected outcome is a.com instead of a.come, but doesn't make any difference to the failing result here)
-
-![image](Pictures/5.png)
-
-### Test output of my implementation
-The test failed as shown: 
-
-![image](Pictures/8.png)
-
-### Test output of reviewed implementation
-The test failed as shown:
-
-![image](Pictures/11.png)
-
-### Change can be made
-For the second line, we can add a function that counts the `(` and `)`, count +1 everytime a`(` appears and -1 when `)` appears, the output should be the content before when the count = 0. For the thrid line, we can remove anything that's 1 index after `\`, and if there's still a pair of '[]' exist, we output the content within `()`. 
-
-
-
-## - Snippet 3
-
-### Expected outputs is the link: 
-`https://sites.google.com/eng.ucsd.edu/cse-15l-spring-2022/schedule`
+Thus, our implementation is correct as it outputs an empty `[]` while the given implementation is wrong as it outputs `baz`. The part that causes the incorrect outputs is as shown below (line 74-76): 
 
 ![image](Pictures/3.png)
 
-### Test
+Since the given implementation outputs the content `baz` which is within the parenthesis, we can know that it mistook any content that has no space and `\n` within `()` as a link. And another problem is that the program didn't check for `<>` as it should, because if `<>` is checked the program will know that `baz` is not a link. 
 
-![image](Pictures/6.png)
+## - Test 2
+The second different result I found is [test481](https://github.com/nidhidhamnani/markdown-parser/blob/main/test-files/481.md?plain=1).
 
-### Test output of my implementation
-The test failed as shown:
+The comparison of the output of our implementation (left) and given implemention (right) is as below: 
 
-![image](Pictures/9.png)
+![image](Pictures/4.png)
 
-### Test output of reviewed implementation
-The test failed as shown:
+According to CommonMark, the correct out put should be a link named `/uri "title"` as shown: 
 
-![image](Pictures/12.png)
+![image](Pictures/5.png)
 
-### Change can be made
-We can check if there are newlines within `[]` or `()`, if so, we skip that line, else we print out the content within `()`. 
+Thus, our implementation is correct as it prints the correct link name `/uri "title"`, while the given implementation outputs an empty `[]`. The part that causes the incorrect outputs is the same as last one (line 75-76): 
+
+![image](Pictures/3.png) 
+
+In this implementation it does not allow any space but the actual link `/uri "title"` that we need to print out does contain a space and it is actually valid, meaning that containing space should not be a condition that prevent the link from being printed. 
+
+
+
+
 
 
 
